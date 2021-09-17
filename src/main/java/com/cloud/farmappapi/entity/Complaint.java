@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author kmahendr
+ * @author Ragini
  *
  */
 @Entity
@@ -36,37 +36,19 @@ public class Complaint {
 	@Column(name="creators")
 	private String createdBy;
 
-	
-	
-	
-	
 	/**
-	 * 
+	 * Default constructor
 	 */
 	public Complaint() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-
-
-
-
-	/**
-	 * @param complaintId
-	 * @param complainDescription
-	 * @param createdBy
-	 */
 	public Complaint(Long complaintId, String complainDescription, String createdBy) {
 		super();
 		this.complaintId = complaintId;
 		this.complainDescription = complainDescription;
 		this.createdBy = createdBy;
 	}
-
-
-
-
 
 	/**
 	 * @return the complaintId
@@ -75,19 +57,12 @@ public class Complaint {
 		return complaintId;
 	}
 
-
-
-
-
 	/**
 	 * @param complaintId the complaintId to set
 	 */
 	public void setComplaintId(Long complaintId) {
 		this.complaintId = complaintId;
 	}
-
-
-
 
 
 	/**
@@ -98,18 +73,12 @@ public class Complaint {
 	}
 
 
-
-
-
 	/**
 	 * @param complainDescription the complainDescription to set
 	 */
 	public void setComplainDescription(String complainDescription) {
 		this.complainDescription = complainDescription;
 	}
-
-
-
 
 
 	/**
@@ -120,18 +89,12 @@ public class Complaint {
 	}
 
 
-
-
-
 	/**
 	 * @param createdBy the createdBy to set
 	 */
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-	
-	
-	
 	
 
 }
