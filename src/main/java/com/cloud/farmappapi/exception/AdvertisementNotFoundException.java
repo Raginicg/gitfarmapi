@@ -7,34 +7,28 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * @author kmahendr
- * 
- * The UserNotFoundException handle UserNotFound 
+ * @author USER
  *
  */
 @ResponseStatus(code = HttpStatus.BAD_REQUEST)
-public class UserNotFoundException extends RuntimeException {
+public class AdvertisementNotFoundException extends RuntimeException {
 	
 	private static final long serialVersionUID = 1L;
-
+	
 	/**
 	 * 
 	 */
-	public UserNotFoundException() {
+	public AdvertisementNotFoundException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 	/**
 	 * @param message
 	 * This class Displays message of exception
 	 */
-	public UserNotFoundException(String message) {
+	
+	public AdvertisementNotFoundException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
-	}
-	
-	
-	
-
+	}	
 }

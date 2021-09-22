@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User saveUser(User user) {
-		// TODO Auto-generated method stub
 		if (user.getUserName() == null || user.getLoginName() == null || user.getPwd() == null) {
 			throw new NullPointerException("Please Enter All Values in the field");
 		}
@@ -33,14 +32,11 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
-
-
 	/**
 	 *
 	 */
 	@Override
 	public User findByLoginName(String loginName) {
-		// TODO add findbyname logic
 		
 		User user=null;
 		if (loginName == null) {
@@ -55,8 +51,6 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findByLoginName(loginName);
 		
 	}
-
-
 
 	/**
 	 *

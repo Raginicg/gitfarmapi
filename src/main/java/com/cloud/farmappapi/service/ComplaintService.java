@@ -15,9 +15,9 @@ public interface ComplaintService {
 	
 	public Complaint addComplaint(Complaint complaint);
 	
-	public Optional<Complaint> getComplaintById(long complaintId) throws ComplaintNotFoundException;
+	public Complaint getComplaintById(long complaintId) throws ComplaintNotFoundException;
 	
-	void deleteComplaintById(long complaintId) throws ComplaintNotFoundException;
+	public void deleteComplaintById(long complaintId) throws ComplaintNotFoundException;
 	
 	public Complaint updateComplaint(Complaint complaint) throws ComplaintNotFoundException;
 	
