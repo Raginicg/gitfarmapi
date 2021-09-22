@@ -6,6 +6,11 @@ import org.springframework.stereotype.Repository;
 import com.cloud.farmappapi.entity.Complaint;
 import com.cloud.farmappapi.exception.ComplaintNotFoundException;
 
+/**
+ * 
+ * @author Ragini
+ *
+ */
 @Repository
 public interface ComplaintRepository extends JpaRepository<Complaint, Long> {
 	
