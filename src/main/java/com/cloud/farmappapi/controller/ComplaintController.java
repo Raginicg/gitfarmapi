@@ -79,11 +79,11 @@ public class ComplaintController {
 	}
 	
 	/**
-	 * http://localhost:9090/Farm-api/complaint/complaint/{complaintId}   
+	 * http://localhost:9090/Farm-api/complaint/{complaintId}   
 	 * detete mapping
 	 */
-	@DeleteMapping("/complaint/{complaintId}")
-	public ResponseEntity<?> deleteComplaint(@PathVariable Long complaintId, HttpSession session){
+	@DeleteMapping("/{complaintId}")
+	public ResponseEntity<?> deleteComplaint(@PathVariable Long complaintId){
 		logger.info("Inside Controller Delete Complaint");
 		complaintService.deleteComplaintById(complaintId);
 		return new ResponseEntity<String>("Complaint Id  " + complaintId + " is deleted", HttpStatus.OK);
@@ -94,24 +94,23 @@ public class ComplaintController {
 	 * http://localhost/Farm-api/complaint/updateComplaint     
 	 * Update Complaint
 	 */
-	@PatchMapping("/updateComplaint")
-	public ResponseEntity<?> updateComplaint(@RequestBody Complaint complaint, BindingResult result,HttpSession session){
+	@PutMapping("/updateComplaint")
+	public ResponseEntity<?> updateComplaint(@RequestBody Complaint complaint, BindingResult result){
 		logger.info("Inside Controller Update Complaint");
 		ResponseEntity<?> errorMap = mapValidationErrorService.mapValidationError(result);
 		if(errorMap!=null)
 			return errorMap;
 		Complaint updateComplaint=complaintService.updateComplaint(complaint);
 		return new ResponseEntity<Complaint>(updateComplaint, HttpStatus.CREATED);
-		
 	}
 		
 	
 	/**
-	 *  http://localhost:9090/Farm-api/complaint/complaint/{complaintId}   
+	 *  http://localhost:9090/Farm-api/complaint/{complaintId}   
 	 *  View complaint by id
 	 */
-		@GetMapping("/complaint/{complaintId}")
-		public ResponseEntity<?> getComplaintById(@PathVariable int complaintId, HttpSession session){
+		@GetMapping("/{complaintId}")
+		public ResponseEntity<?> getComplaintById(@PathVariable int complaintId){
 			logger.info("Inside Controller View Complaint ById");
 			Complaint foundcomplaint = complaintService.getComplaintById(complaintId);
 			return new ResponseEntity<Complaint>(foundcomplaint, HttpStatus.OK);
