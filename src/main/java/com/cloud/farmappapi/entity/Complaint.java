@@ -3,6 +3,8 @@
  */
 package com.cloud.farmappapi.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,10 +17,9 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="complaints")
-public class Complaint {
-	
-	
+@Table(name="complaint")
+public class Complaint implements Serializable {
+	private static final long serialVersionUID = 6325307718376939175L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long complaintId;
@@ -95,6 +96,12 @@ public class Complaint {
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "Complaint [complaintId=" + complaintId + ", complainDescription=" + complainDescription + ", createdBy="
+				+ createdBy + "]";
+	}
+	
 }
+

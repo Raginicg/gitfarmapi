@@ -3,24 +3,15 @@
  */
 package com.cloud.farmappapi.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GeneratorType;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 /**
- * @author kmahendr
+ * @author Sanjeet
  *
  */
 @Entity
@@ -49,7 +40,7 @@ public class Advertisement {
 	 * postedBy field will contain name of Dealer retrieved through session
 	 */
 	@Column(name="postedby")
-	private String PostedBy;
+	private String postedBy;
 	/**
 	 * @param advertiseId
 	 * @param title
@@ -65,12 +56,88 @@ public class Advertisement {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+	/**
+	 * @return the advertiseId
+	 */
+	public Long getAdvertiseId() {
+		return advertiseId;
+	}
+
+	/**
+	 * @param advertiseId the advertiseId to set
+	 */
+	public void setAdvertiseId(Long advertiseId) {
+		this.advertiseId = advertiseId;
+	}
+
+	/**
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * @param title the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	/**
+	 * @return the advertiseIdentifier
+	 */
+	public String getAdvertiseIdentifier() {
+		return advertiseIdentifier;
+	}
+
+	/**
+	 * @param advertiseIdentifier the advertiseIdentifier to set
+	 */
+	public void setAdvertiseIdentifier(String advertiseIdentifier) {
+		this.advertiseIdentifier = advertiseIdentifier;
+	}
+
+	/**
+	 * @return the offerDescription
+	 */
+	public String getOfferDescription() {
+		return offerDescription;
+	}
+
+	/**
+	 * @param offerDescription the offerDescription to set
+	 */
+	public void setOfferDescription(String offerDescription) {
+		this.offerDescription = offerDescription;
+	}
+
+	/**
+	 * @return the availableStock
+	 */
+	public String getAvailableStock() {
+		return availableStock;
+	}
+
+	/**
+	 * @param availableStock the availableStock to set
+	 */
+	public void setAvailableStock(String availableStock) {
+		this.availableStock = availableStock;
+	}
+
+	/**
+	 * @return the postedBy
+	 */
+	public String getPostedBy() {
+		return postedBy;
+	}
+
+	/**
+	 * @param postedBy the postedBy to set
+	 */
+	public void setPostedBy(String postedBy) {
+		this.postedBy = postedBy;
+	}
 }
